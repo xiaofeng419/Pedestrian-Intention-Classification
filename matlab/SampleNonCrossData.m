@@ -15,13 +15,13 @@
 
 function SampleNonCrossData(attAnn, behAnn, vbbRoot, seqRoot, sampleRoot)
   ncIdx = find(attAnn.crossing == 0);
-  vpID = [behAnn.vidID(ncIdx), behAnn.pedID(ncIdx)];
-  sampleImgDir = fullfile(sampleRoot, 'image');
-  sampleBBDir = fullfile(sampleRoot, 'bbox');
-  if ~exist(sampleImgDir, 'dir')
+  vpID = [attAnn.vidID(ncIdx), attAnn.pedID(ncIdx)];
+  ncDir = fullfile(sampleRoot, 'non-cross');
+  sampleImgDir = fullfile(ncDir, 'image');
+  sampleBBDir = fullfile(ncDir, 'bbox');
+  if ~exist(ncDir, 'dir')
+      mkdir(ncDir);
       mkdir(sampleImgDir);
-  end
-  if ~exist(sampleBBDir, 'dir')
       mkdir(sampleBBDir);
   end
   for i = 1:length(vpID)
@@ -33,7 +33,7 @@ function SampleNonCrossData(attAnn, behAnn, vbbRoot, seqRoot, sampleRoot)
     cid = round(actNum/2);
     frameID = pAct(cid).start_frame;
     startFrameID = max(pAct(1).start_frame, frameID-10);
-    endFrameID = min(pAct(cid).end_frame, frameID+10);
+    endFrameID = min(pAct(cid).end_frame, frameID+30);
     vbbPath = fullfile(vbbRoot, [vpID{i,1} '.vbb']);
     seqPath = fullfile(seqRoot, [vpID{i,1} '.seq']);
     SampleFromFile(vbbPath, seqPath, sampleImgDir, sampleBBDir, vidID, pedID, startFrameID, endFrameID, 'non-cross');

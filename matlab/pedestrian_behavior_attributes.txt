@@ -144,7 +144,6 @@ video_0098, pedestrian2, 2, LAT, D, NS, male, adult, 2, TW, yes, 1
 video_0099, pedestrian, 1, LAT, D, NS, female, adult, 4, TW, yes, 1
 video_0100, pedestrian, 1, LAT, D, NS, female, adult, 4, TW, yes, 1
 video_0101, pedestrian, 1, LAT, D, S, female, adult, 2, TW, yes, 1
-video_0102, pedestrian, 1, LAT, D, NS, female, adult, 3, OW, yes, 1
 video_0103, pedestrian1, 3, LAT, D, NS, female, senior, 4, TW, yes, 1
 video_0103, pedestrian2, 3, LAT, D, NS, female, senior, 4, TW, yes, 1
 video_0103, pedestrian3, 3, LAT, D, NS, female, young, 4, TW, yes, 1
@@ -214,7 +213,6 @@ video_0135, pedestrian3, 5, LAT, D, NS, male, adult, 2, OW, yes, 1
 video_0135, pedestrian4, 5, LAT, D, NS, male, adult, 2, OW, yes, 1
 video_0135, pedestrian5, 5, LAT, D, NS, male, adult, 2, OW, yes, 1
 video_0135, pedestrian6, 3, LAT, D, NS, female, adult, 2, OW, yes, 1
-video_0135, pedestrian7, 3, LAT, D, NS, female, adult, 2, OW, yes, 1
 video_0135, pedestrian8, 3, LAT, D, NS, male, senior, 2, OW, yes, 1
 video_0135, pedestrian9, 1, LAT, D, NS, female, senior, 2, OW, yes, 1
 video_0136, pedestrian1, 1, LAT, D, NS, male, adult, 4, TW, no, 1
@@ -226,14 +224,12 @@ video_0138, pedestrian3, 3, LAT, D, S, female, senior, 4, TW, yes, 1
 video_0138, pedestrian4, 3, LAT, D, S, female, adult, 4, TW, yes, 1
 video_0139, pedestrian1, 4, LAT, ND, n/a, male, adult, 2, TW, yes, 1
 video_0139, pedestrian2, 4, LAT, ND, n/a, male, adult, 2, TW, yes, 1
-video_0139, pedestrian3, 4, LAT, ND, n/a, male, adult, 2, TW, yes, 1
 video_0139, pedestrian4, 4, LAT, ND, n/a, male, adult, 2, TW, yes, 1
 video_0140, pedestrian, 1, LAT, D, NS, female, adult, 4, TW, yes, 1
 video_0141, pedestrian1, 2, LAT, D, NS, male, adult, 1, TW, yes, 1
 video_0141, pedestrian2, 2, LAT, D, NS, male, adult, 1, TW, yes, 1
 video_0143, pedestrian1, 2, LAT, D, NS, male, adult, 3, OW, yes, 1
 video_0143, pedestrian2, 2, LAT, D, NS, male, adult, 3, OW, yes, 1
-video_0143, pedestrian3, 1, LAT, D, NS, female, adult, 3, OW, yes, 1
 video_0144, pedestrian1, 2, LAT, D, NS, male, adult, 3, TW, yes, 1
 video_0144, pedestrian2, 2, LAT, D, NS, male, adult, 3, TW, yes, 1
 video_0144, pedestrian3, 2, LAT, D, NS, female, adult, 3, TW, yes, 1
@@ -249,8 +245,6 @@ video_0147, pedestrian2, 1, LAT, D, NS, male, adult, 1, OW, yes, 1
 video_0148, pedestrian1, 2, LONG, ND, n/a, male, adult, 2, TW, no, 0
 video_0148, pedestrian2, 2, LONG, ND, n/a, male, adult, 2, TW, no, 0
 video_0149, pedestrian1, 1, LAT, D, NS, male, senior, 2, OW, yes, 1
-video_0149, pedestrian2, 2, LAT, D, NS, female, adult, 2, OW, yes, 1
-video_0149, pedestrian3, 2, LAT, D, NS, female, adult, 2, OW, yes, 1
 video_0149, pedestrian4, 1, LAT, D, NS, female, adult, 2, OW, yes, 1
 video_0150, pedestrian1, 1, LAT, D, NS, male, adult, 2, TW, yes, 1
 video_0150, pedestrian2, 1, LAT, D, NS, female, adult, 4, TW, yes, 1

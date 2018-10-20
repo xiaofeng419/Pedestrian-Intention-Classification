@@ -15,16 +15,17 @@
 
 function SampleCrossData(attAnn, behAnn, vbbRoot, seqRoot, sampleRoot)
   crossIdx = find(attAnn.crossing == 1);
-  vpID = [behAnn.vidID(crossIdx), behAnn.pedID(crossIdx)];
+  vpID = [attAnn.vidID(crossIdx), attAnn.pedID(crossIdx)];
   crossActID = CheckCrossState(behAnn, vpID);
-  sampleImgDir = fullfile(sampleRoot, 'image');
-  sampleBBDir = fullfile(sampleRoot, 'bbox');
-  if ~exist(sampleImgDir, 'dir')
+  crossDir = fullfile(sampleRoot, 'cross');
+  sampleImgDir = fullfile(crossDir, 'image');
+  sampleBBDir = fullfile(crossDir, 'bbox');
+  if ~exist(crossDir, 'dir')
+      mkdir(crossDir);
       mkdir(sampleImgDir);
-  end
-  if ~exist(sampleBBDir, 'dir')
       mkdir(sampleBBDir);
   end
+
   for i = 1:length(vpID)
     vidID = vpID{i,1};
     pedInfo = behAnn(vidID);
@@ -32,7 +33,7 @@ function SampleCrossData(attAnn, behAnn, vbbRoot, seqRoot, sampleRoot)
     pAct = pedInfo.(pedID);
     cid = crossActID(i);
     frameID = pAct(cid).start_frame;
-    startFrameID = max(pAct(1).start_frame, frameID-10);
+    startFrameID = max(pAct(1).start_frame, frameID-30);
     endFrameID = min(pAct(cid).end_frame, frameID+10);
     vbbPath = fullfile(vbbRoot, [vpID{i,1} '.vbb']);
     seqPath = fullfile(seqRoot, [vpID{i,1} '.seq']);
