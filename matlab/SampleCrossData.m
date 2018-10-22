@@ -33,8 +33,8 @@ function SampleCrossData(attAnn, behAnn, vbbRoot, seqRoot, sampleRoot)
     pAct = pedInfo.(pedID);
     cid = crossActID(i);
     frameID = pAct(cid).start_frame;
-    startFrameID = max(pAct(1).start_frame, frameID-30);
-    endFrameID = min(pAct(cid).end_frame, frameID+10);
+    startFrameID = frameID; %max(pAct(1).start_frame, frameID-30);
+    endFrameID = pAct(cid).end_frame;%min(pAct(cid).end_frame, frameID+10);
     vbbPath = fullfile(vbbRoot, [vpID{i,1} '.vbb']);
     seqPath = fullfile(seqRoot, [vpID{i,1} '.seq']);
     SampleFromFile(vbbPath, seqPath, sampleImgDir, sampleBBDir, vidID, pedID, startFrameID, endFrameID, 'cross');
