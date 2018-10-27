@@ -8,7 +8,6 @@ import json
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import matplotlib.image as mpimg
-import os.path
 import random
 
 def readJson (json_path):
@@ -58,9 +57,9 @@ def readBoundingBox (txtFilePath):
 def readPoseBox (j_image):
     '''
         Result (17 body parts)
-        {0,  "Nose"},
-                    {1,  "LEye"},
-                    {2,  "REye"},
+            {0,  "Nose"},
+            {1,  "LEye"},
+            {2,  "REye"},
                     {3,  "LEar"},
                     {4,  "REar"},
                     {5,  "LShoulder"},
@@ -186,17 +185,23 @@ def write_pose_cross_data(j, bbox_path, image_path, output_data_path, tag, vis =
 
             #%%
 
-json_path = "../../Dataset/Data_by_Matlab/non-cross_pose_json/alphapose-results.json"
-bbox_path = '../../Dataset/Data_by_Matlab/non-cross/bbox'
-image_path = '../../Dataset/Data_by_Matlab/non-cross/image'
-output_data_path = '../../Dataset/Data_by_Matlab/non-cross_pose_data'
+def main():
+    json_path = "../../Dataset/Data_by_Matlab/cross_pose_json/alphapose-results.json"
+    bbox_path = '../../Dataset/Data_by_Matlab/cross/bbox'
+    image_path = '../../Dataset/Data_by_Matlab/cross/image'
+    output_data_path = '../../Dataset/Data_by_Matlab/cross_pose_data'
+
+    j = readJson(json_path)
+    write_pose_cross_data(j, bbox_path, image_path, output_data_path, 'cross', True)
 
 #%%
 
-j = readJson (json_path)
+if __name__== "__main__":
+  main()
+
+
 
 #%%
 
-write_pose_cross_data(j, bbox_path, image_path, output_data_path, 'non-cross', False)
 
 #%%
