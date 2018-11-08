@@ -13,17 +13,14 @@
 %seqRoot: path to the .seq files                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function SampleCrossData(attAnn, behAnn, vbbRoot, seqRoot, sampleRoot)
+function SampleCrossData(attAnn, behAnn, vbbRoot, sampleRoot)
   crossIdx = find(attAnn.crossing == 1);
   vpID = [attAnn.vidID(crossIdx), attAnn.pedID(crossIdx)];
   crossActID = CheckCrossState(behAnn, vpID);
   crossDir = fullfile(sampleRoot, 'cross');
-  sampleImgDir = fullfile(crossDir, 'image');
-  sampleBBDir = fullfile(crossDir, 'bbox');
+
   if ~exist(crossDir, 'dir')
       mkdir(crossDir);
-      mkdir(sampleImgDir);
-      mkdir(sampleBBDir);
   end
 
   for i = 1:length(vpID)
@@ -32,12 +29,13 @@ function SampleCrossData(attAnn, behAnn, vbbRoot, seqRoot, sampleRoot)
     pedID = vpID{i, 2};
     pAct = pedInfo.(pedID);
     cid = crossActID(i);
-    frameID = pAct(cid).start_frame;
-    startFrameID = frameID; %max(pAct(1).start_frame, frameID-30);
-    endFrameID = pAct(cid).end_frame;%min(pAct(cid).end_frame, frameID+10);
+    startFrameID = pAct(cid).start_frame - 5;
+    endFrameID = pAct(cid).end_frame + 5;
     vbbPath = fullfile(vbbRoot, [vpID{i,1} '.vbb']);
-    seqPath = fullfile(seqRoot, [vpID{i,1} '.seq']);
-    SampleFromFile(vbbPath, seqPath, sampleImgDir, sampleBBDir, vidID, pedID, startFrameID, endFrameID, 'cross');
+    vb = vbb('vbbLoad', vbbPath);
+    ids = GetPedVbbID(vb, pedID);
+    [id, startFrameID, endFrameID] = checkConsistency(vb, ids, startFrameID, endFrameID);
+    SampleFromFile(vb, crossDir, vidID, pedID, id, startFrameID, endFrameID, 'cross');
   end
 end
 
@@ -57,3 +55,30 @@ function [crossMap] = CheckCrossState(behAnn, vpID)
       end
   end
 end
+
+function [id, sf, ef] = checkConsistency(vb, ids, startFrameID, endFrameID)
+  for i = 1:length(ids)
+      action = vbb('get', vb, ids(i));
+      left = max(startFrameID, action.str);
+      right = min(endFrameID, action.end);
+      if((right - left + 1)/(endFrameID - startFrameID + 1) > 0.7)
+         id = ids(i);
+         sf = left;
+         ef = right;
+         break;
+      end
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
