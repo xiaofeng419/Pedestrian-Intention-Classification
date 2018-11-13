@@ -166,6 +166,8 @@ def plot_learning_curve(estimator, title, X, y, ylim=None, cv = 5, n_jobs=None, 
 #             norm_train_feature[i][j * 2 + 1] = (train_feature[i][j * 2 + 1] - y) / h
 #     return norm_train_feature
 
+
+
 def addPoseFeature(train_feature):
     added_train_feature = []
     for keypoints_list in train_feature:
