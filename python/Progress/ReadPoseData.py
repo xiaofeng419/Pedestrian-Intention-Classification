@@ -101,12 +101,12 @@ def readPoseBox (keypoints):
 
             # Visualize Json result
             #plt.scatter(x, y, s=2, c='red', marker='o')
-
+    w = right_x - left_x
     # Get Pose Box
     pbox = [0, 0, 0, 0]
-    pbox[0] = left_x
+    pbox[0] = left_x - 0.2 * w
     pbox[1] = bottom_y
-    pbox[2] = right_x
+    pbox[2] = right_x + 0.2 * w
     pbox[3] = top_y
     return x, y, confi, pbox
 
@@ -152,6 +152,17 @@ def write_pose_cross_data(pose_database, annotation_seq, image_path, output_path
             if 'keypoints' not in frame_data:
                 frame_data['keypoints'] = []
             frame_data['keypoints'].append(result_keypoints)
+
+            # Get Road info
+            # L_ankle_x = result_keypoints[15 * 3]
+            # L_ankle_y = result_keypoints[15 * 3 + 1]
+            # R_ankle_x = result_keypoints[16 * 3]
+            # R_ankle_y = result_keypoints[16 * 3 + 1]
+            # nose_y = result_keypoints[1]
+            # road_box[0] =
+            # road_box[1] =
+            # road_box[2] =
+            # road_box[3] =
 
             if (vis):
                 # Show original image at 19020 * 1080
