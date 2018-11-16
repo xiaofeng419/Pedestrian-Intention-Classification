@@ -24,9 +24,9 @@ We use the random forest module provided by scikit-learn library. We set hyper p
 In this section, we illustrate the experiment of our random forestmodel. Fig.3 and Fig.4 Illustrates the result of the classification on video. Fig.5 give the learning curve of our random forest model, note the validation accuracy of our model on sequential data reach 88%. It is the best accuracy reported in [1]. Check Fig.6 and Fig.7 below to see our random forest model making correct predictions for both C/NC sequences respectively. Please check [4], [5] for our demo. 
 
 <p align="center">
-  <img  src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/bbb.png"><br>
+  <img  src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/bbb.png" height="600"><br>
   <b>Fig.3. Prediction Result on Video</b><br>
-  <img  src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/ccc.png"><br>
+  <img  src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/ccc.png" height="600"><br>
   <b>Fig.4. Prediction Result on Video</b><br>
 </p>
 <p align="center">
