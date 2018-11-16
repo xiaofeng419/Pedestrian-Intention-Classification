@@ -14,8 +14,8 @@ For a single frame, we have two kinds of features: human pose and environment si
 Our second kind of feature is the environment signals, although it is still under developing at present, we shall integrate it soon. (Fig.2, PSPNET) 
 <p align="center">
   <img src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/Feature.png">
+  <b>Fig.2. Road Segmentation</b><br>
 </p>
-Fig.2. Road Segmentation
 
 ### Random Forest 
 We use the random forest module provided by scikit-learn library. We set hyper parameters to use 100 decision trees and tree-depth up to 6. Our training sequences are extracted from the first 280 videos of JAAD [2] while testing sequences from the last 66 ones. Although we obtain an unbalance “Crossing vs Non-Crossing” (5125 vs 1860) sample set, we try to make our training/testing sets to be balance. Finally, our training set contains 1699 samples while testing set 444 samples. Please refer experiment part for the performance of our random forest model.
@@ -24,9 +24,10 @@ We use the random forest module provided by scikit-learn library. We set hyper p
 In this section, we illustrate the experiment of our random forestmodel. Fig.3 and Fig.4 Illustrates the result of the classification on video. Fig.5 give the learning curve of our random forest model, note the validation accuracy of our model on sequential data reach 88%. It is the best accuracy reported in [1]. Check Fig.6 and Fig.7 below to see our random forest model making correct predictions for both C/NC sequences respectively. Please check [4], [5] for our demo. 
 
 <p align="center">
-  <img  src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/bbb.png">
   <img  src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/bbb.png"><br>
-  <b>Fig.1. Human Pose Extraction</b><br>
+  <b>Fig.3. Prediction Result on Video</b><br>
+  <img  src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/ccc.png"><br>
+  <b>Fig.4. Prediction Result on Video</b><br>
 </p>
 <p align="center">
   <img  src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/learning_curve.png"><br>
@@ -40,8 +41,6 @@ In this section, we illustrate the experiment of our random forestmodel. Fig.3 a
   <img  src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/standing_seq.png"><br>
   <b>Fig.7. Ground True: Non-Crossing; Prediction: Non-Crossing</b><br>
 </p>
-
-
 
 
 ### Reference 
