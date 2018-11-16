@@ -8,8 +8,9 @@ We used JAAD [2] in our project. JAAD provides tags for a specific pedestrian of
 For a single frame, we have two kinds of features: human pose and environment signals. We use the state-of-art algorithm AlphaPose [3] to extract human pose, it can provide (x, y) coordinates for 16 joints with prediction confidence. As illustrated in Fig.1, the 16 joints include nose, eyes, knees and ankles, etc.  Based on our task, we focus on joints which highly relevant to postures and movement in  based on Yolocrossing and non-crossing behaviors. We identify the relative angles between parts of limbs and the ground are most critical for C/NC behaviors. Therefore, we extract the angles between the ground and the forearms, the upper arms, the tights and the calves. In addition, the angles between tight and calf of each leg are particular informative as they codes the human’s moving status. Please see the right part of Fig.1 to see the highlighted parts of limbs which we use to compute these 10 angles. For each frame we obtain a 10 dimensions feature, thus a sequence with 15 frames is associated a big-feature with 15×10=150 dimensions.
 <p align="center">
   <img width="460" height="300" src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/aaa.png">
+  <b>Fig.1. Human Pose Extraction</b><br>
 </p>
-                                            Fig.1. Human Pose Extraction
+                                            
 Our second kind of feature is the environment signals, although it is still under developing at present, we shall integrate it soon. (Fig.2, PSPNET) 
 <p align="center">
   <img src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/Feature.png">
