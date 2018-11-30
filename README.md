@@ -47,14 +47,11 @@ In this section, we illustrate the experiment of our random forestmodel. Fig.3 I
 [2]. I. Kotseruba, A. Rasouli, J. K. Tsotsos. "Joint Attention in Autonomous Driving (JAAD)."arXiv preprint arXiv:1609.04741 (2016). 
 [3]. Fang H, Xie S, Tai Y W, et al. Rmpe: Regional multi-person pose estimation[C]//The IEEE International Conference on Computer Vision (ICCV). 2017, 2. 
 [4]. https://slack-files.com/TDDA4RLBW-FE59N4LMC-85708314f9
+
 [5]. https://slack-files.com/TDDA4RLBW-FE39JCA0H-ed2d235da3 
 
 
 
-img[src*='#center'] { 
-    display: block;
-    margin: auto;
-}
 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
