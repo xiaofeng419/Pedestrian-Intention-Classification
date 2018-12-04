@@ -16,7 +16,7 @@ For a single frame, we have two kinds of features: human pose and environment si
   <b>Fig.1. Human Pose Extraction</b><br>
 </p>
                                             
-Our second kind of feature is the environment signals, although it is still under developing at present, we shall integrate it soon. (Fig.2, PSPNET) 
+Our second feature is the environment signals. We utilized PSPNet to extract segmentation information of Road/sidewalk to identify the location of the pedestrians for improved accuracy.  (Fig.2, PSPNET) 
 <p align="center">
   <img src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/Feature.png">
   <b>Fig.2. Road Segmentation</b><br>
