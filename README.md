@@ -1,4 +1,7 @@
 # Pedestrian Crossing Classifier
+
+### Demo
+Click below to play the demo video:
 <div align="center">
   <a href="https://www.youtube.com/watch?v=fYNCOahzYf8"><img src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/Ped_cover.png" alt="IMAGE ALT TEXT"></a>
 </div>
