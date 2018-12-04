@@ -1,7 +1,7 @@
 # Pedestrian Crossing Classifier
-
-[![Alt text](https://img.youtube.com/vi/fYNCOahzYf8/0.jpg)](https://www.youtube.com/watch?v=fYNCOahzYf8)
-
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=fYNCOahzYf8"><img src="https://github.com/xiaofeng419/Pedestrian-Intention-Classification/blob/master/Ped_cover.png" alt="IMAGE ALT TEXT"></a>
+</div>
 
 ### Dataset
 We used JAAD [2] in our project. JAAD provides tags for a specific pedestrian of his/her behaviors during several time slices. We obtain “Non-Crossing” sequence as follows: a non-crossing tagged pedestrian in JAAD [2] has other behaviors such as wondering around the curbs, looking at the traffics, waiting the buses etc. Each of these behaviors also has a frame range and associated bounding boxes in JAAD. Similarly, we split each frame range of these behaviors in order in step 15 and tag all the obtained frame segments being “Non-Crossing”. Finally, we get 1860 “Non-Crossing” sequences.  
